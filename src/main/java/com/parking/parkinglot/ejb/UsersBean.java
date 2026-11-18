@@ -1,6 +1,7 @@
 package com.parking.parkinglot.ejb;
 
 import com.parking.parkinglot.common.UserDto;
+import com.parking.parkinglot.entities.Car;
 import com.parking.parkinglot.entities.User;
 import jakarta.ejb.EJBException;
 import jakarta.ejb.Stateless;
@@ -22,7 +23,7 @@ public class UsersBean {
 
     public List<UserDto> findAllUsers() {
         LOG.info("findAllUsers");
-        
+
         try {
             TypedQuery<User> typedQuery = entityManager.createQuery("SELECT u FROM User u", User.class);
             List<User> users = typedQuery.getResultList();
@@ -40,4 +41,8 @@ public class UsersBean {
         }
         return dtos;
     }
+
+
+
+
 }

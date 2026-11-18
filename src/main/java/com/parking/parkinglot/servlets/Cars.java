@@ -21,11 +21,11 @@ public class Cars extends HttpServlet {
             throws ServletException, IOException {
 
         List<CarDto> cars = carsBean.findAllCars();
-        request.setAttribute("cars",cars);
+        request.setAttribute("cars", cars);
 
         request.setAttribute("numberOfFreeParkingSpots", 10);
         request.setAttribute("activePage", "Cars");
-        request.getRequestDispatcher("/WEB-INF/pages/cars.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/pages/cars.jsp").forward(request, response);
 
     }
 
